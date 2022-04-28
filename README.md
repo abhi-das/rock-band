@@ -23,15 +23,15 @@ Features Enabled:
 
 ### Login Module Layout
 
-<img src="./git_assets/login-view.png" width="50%"/>
+<img src="./FE/git_assets/login-view.png" width="50%"/>
 
 ### Product Module Layout
 
-<img src="./git_assets/prd-view.png" width="50%"/>
+<img src="./FE/git_assets/prd-view.png" width="50%"/>
 
 ### Cart Module Layout
 
-<img src="./git_assets/cart-view.png" width="50%"/>
+<img src="./FE/git_assets/cart-view.png" width="50%"/>
 
 ---
 
@@ -72,31 +72,31 @@ Navigate to `Frontend-Starter\FE\rock-band` folder for Angular Application
 
 ### Module-wise Error Handing
 
-<img src="./git_assets/error-handing.png" width="45%"/>
+<img src="./FE/git_assets/error-handing.png" width="45%"/>
 
 ### Code Coverage Report
 
-<img src="./git_assets/cart-code-coverage.png" width="45%"/>
-<img src="./git_assets/product-code-coverage.png" width="45%"/>
+<img src="./FE/git_assets/cart-code-coverage.png" width="45%"/>
+<img src="./FE/git_assets/product-code-coverage.png" width="45%"/>
 
 ### Lighthouse Report
 
-<img src="./git_assets/lighthouse-report.png" width="50%"/>
+<img src="./FE/git_assets/lighthouse-report.png" width="50%"/>
 
 ### Admin - Inventory Module Layout
 
-<img src="./git_assets/admin-inventory-view.png" width="50%"/>
+<img src="./FE/git_assets/admin-inventory-view.png" width="50%"/>
 
 ### Admin - Inventory Edit Product Layout
 
-<img src="./git_assets/admin-inventory-edit-view.png" width="50%"/>
+<img src="./FE/git_assets/admin-inventory-edit-view.png" width="50%"/>
 
 ### Admin - Code Coverage
 
-<img src="./git_assets/admin-code-coverage.png" width="50%"/>
+<img src="./FE/git_assets/admin-code-coverage.png" width="50%"/>
 
 ### Storybook Feature
 
-<img src="./git_assets/storybook-view.png" width="45%"/>
+<img src="./FE/git_assets/storybook-view.png" width="45%"/>
 
 This project was generated using [Nx](https://nx.dev).
