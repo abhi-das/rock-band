@@ -1,0 +1,53 @@
+<div class="row pt-4 pb-4">
+	<div class="col-md-1 text-center">
+		<rock-band-button-cta>
+			<a [routerLink]="['/login']" class="btn p-2" aria-label="Brand Logo" title="Brand Logo">
+				<i class="fs-2 bi bi-command"></i>
+			</a>
+		</rock-band-button-cta>
+	</div>
+	<ng-container *ngIf="isLoggedOut | async">
+		<div class="col-md-10">
+			<rock-band-navbar>
+				<ul class="navbar-nav" navItems>
+					<li class="nav-item active">
+						<a [routerLink]="['/dashboard']" class="nav-link fw-bold" aria-current="false">Dashboard</a>
+					</li>
+					<li class="nav-item">
+						<a [routerLink]="['/products']" class="nav-link fw-bold" aria-current="page">Inventory</a>
+					</li>
+					<li class="nav-item">
+						<a [routerLink]="['/users']" class="nav-link fw-bold" aria-current="false">Users</a>
+					</li>
+				</ul>
+			</rock-band-navbar>
+		</div>
+		<div class="col-md-1" role="complementary" aria-label="User Profile and Shopping Cart">
+			<div class="d-flex justify-content-between">
+				<rock-band-button-cta>
+					<a [routerLink]="['/profile']" class="btn p-2" aria-label="profile" title="user profile">
+						<i class="bi bi-person"></i>
+						<span class="mb-0 fs-7">Profile</span>
+					</a>
+				</rock-band-button-cta>
+				<rock-band-button-cta>
+					<button type="button " aria-label="logout" class="btn p-2" (click)="onSignOut()">
+						<i class="bi bi-box-arrow-right"></i>
+						<span class="mb-0 fs-7">logout</span>
+					</button>
+				</rock-band-button-cta>
+			</div>
+		</div>
+	</ng-container>
+
+	<ng-container *ngIf="isLoggedIn | async">
+		<div class="col-md-11 m-auto text-right">
+			<rock-band-button-cta>
+				<button type="button" aria-label="login" class="btn p-2" [routerLink]="['/login']">
+					<i class="bi bi-box-arrow-in-left"></i>
+					<span class="mb-0 fs-7">login</span>
+				</button>
+			</rock-band-button-cta>
+		</div>
+	</ng-container>
+</div>

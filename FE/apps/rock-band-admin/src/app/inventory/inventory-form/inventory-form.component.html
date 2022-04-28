@@ -1,0 +1,50 @@
+<rock-band-product-form [formFieldValues]="existingForm" (formValueEmitter)="onFormSubmit($event)">
+	<div *ngIf="!existingForm" class="mb-4" actionBtn>
+		<div class="text-end">
+			<rock-band-button-cta>
+				<button type="submit" class="btn btn-info me-2" aria-label="Add new products" title="Add new products">
+					<i class="bi bi-plus-lg me-1"></i>
+					<span class="mb-0 fs-7">Add New</span>
+				</button>
+			</rock-band-button-cta>
+			<rock-band-button-cta>
+				<a
+					[routerLink]="['/products']"
+					class="btn btn-info me-2"
+					aria-label="Back to products list screen"
+					title="Cancel"
+				>
+					<i class="bi bi-plus-lg me-1"></i>
+					<span class="mb-0 fs-7">Cancel</span>
+				</a>
+			</rock-band-button-cta>
+		</div>
+	</div>
+
+	<div *ngIf="existingForm" class="mb-4" actionBtn>
+		<div class="text-end">
+			<rock-band-button-cta>
+				<button
+					type="submit"
+					class="btn btn-info me-2"
+					aria-label="Update products details"
+					title="Update products details"
+				>
+					<i class="bi bi-plus-lg me-1"></i>
+					<span class="mb-0 fs-7">Update</span>
+				</button>
+			</rock-band-button-cta>
+			<rock-band-button-cta>
+				<a
+					[routerLink]="['/products']"
+					class="btn btn-info me-2"
+					aria-label="Back to products list screen"
+					title="Cancel"
+				>
+					<i class="bi bi-plus-lg me-1"></i>
+					<span class="mb-0 fs-7">Cancel</span>
+				</a>
+			</rock-band-button-cta>
+		</div>
+	</div>
+</rock-band-product-form>

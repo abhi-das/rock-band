@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+    mern:
+        hostname: localhost
+        build: ../FE/
+        ports:
+            - '8181:90'

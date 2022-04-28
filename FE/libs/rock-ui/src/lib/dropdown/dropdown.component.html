@@ -1,0 +1,7 @@
+<label for="quantity">Quantity</label>
+<select class="mx-2" name="quantity" id="quantity" #dpb (change)="selectHandler(dpb.value)">
+	<option selected>Select</option>
+	<option *ngFor="let qNum of quantityNum" value="{{ qNum }}" [selected]="qNum === selectedValue">
+		{{ qNum }}
+	</option>
+</select>

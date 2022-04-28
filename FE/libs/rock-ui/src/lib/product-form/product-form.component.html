@@ -1,0 +1,54 @@
+<form [formGroup]="addNewProductForm" autocomplete="off" (ngSubmit)="formSubmit()">
+	<ng-content select="[actionBtn]"></ng-content>
+	<div class="row justify-content-between mb-4">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label class="">Name</label>
+				<input type="text" class="form-control" aria-label="name" formControlName="name" />
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<div class="form-group">
+				<label class="">Discount</label>
+				<input type="text" class="form-control" aria-label="discount" formControlName="discount" />
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<div class="form-group">
+				<label class="">Price</label>
+				<input type="text" class="form-control" aria-label="price" formControlName="price" />
+			</div>
+		</div>
+	</div>
+
+	<div class="row justify-content-between">
+		<div class="form-group col-md-6">
+			<label class="">Description</label>
+			<textarea
+				class="form-control"
+				formControlName="description"
+				aria-label="description"
+				id="description"
+				rows="3"
+			></textarea>
+		</div>
+
+		<div class="form-group col-md-3">
+			<label for="defaultImage" class="form-label">Default Image</label>
+			<input
+				class="form-control"
+				type="file"
+				formControlName="defaultImage"
+				aria-label="defaultImage"
+				id="defaultImage"
+			/>
+		</div>
+
+		<div class="form-group col-md-3">
+			<label for="images" class="form-label">Images</label>
+			<input class="form-control" type="file" formControlName="images" aria-label="images" id="images" multiple />
+		</div>
+	</div>
+</form>

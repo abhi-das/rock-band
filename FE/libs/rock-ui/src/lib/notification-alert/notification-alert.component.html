@@ -1,0 +1,14 @@
+<ngb-toast
+	*ngFor="let toast of notificationAlerts"
+	[header]="toast.headertext"
+	[class]="toast.classname"
+	[autohide]="toast.autohide"
+	[delay]="toast.delay || 5000"
+	(hide)="removeNotification(toast)"
+>
+	<ng-template [ngIf]="isTemplate(toast)" [ngIfElse]="textMessage">
+		<ng-template [ngTemplateOutlet]="toast.txtOrTpl"></ng-template>
+	</ng-template>
+
+	<ng-template #textMessage>{{ toast.txtOrTpl }}</ng-template>
+</ngb-toast>

@@ -1,0 +1,19 @@
+<rock-product-thumb
+	*ngIf="productItem"
+	[imgSrc]="productItem.product.defaultImage"
+	[title]="productItem.product.name"
+	[price]="productItem.product.price"
+	[productQuantity]="qNum"
+	(ctaHandler)="addToShoppingCart(productItem, addToCartTemplate)"
+	(quantityHandler)="changeQuantityInCart($event, productItem)"
+	[isCtaDisabled]="productItem.isAddedToCart || false"
+>
+	<!-- TODO: isCtaDisabled-->
+</rock-product-thumb>
+
+<ng-template #addToCartTemplate>
+	<h5 class="fs-6">
+		{{ updatedProd.product.name }}
+		<span>added to <i class="bi bi-basket-fill text-info"></i></span>
+	</h5>
+</ng-template>

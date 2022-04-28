@@ -1,0 +1,24 @@
+<div class="row">
+	<div class="col-sm-2 p-1">
+		<img src="https://via.placeholder.com/150/" alt="" class="w-100 h-100" />
+	</div>
+	<div class="col-sm-9 p-1">
+		<h5 class="text-capitalize fw-sold fs-6">{{ label }}</h5>
+		<p class="fs-7 mb-1">Sold by: RetailNet</p>
+		<p class="fs-7 fw-bold mb-0">Qty: {{ quantity }}</p>
+		<div class="d-flex fs-7">
+			<span class="fw-bold me-2">₹{{ price }}</span>
+			<span class="text-secondary text-decoration-line-through me-2">₹{{ price }}</span>
+			<span class="text-danger text-uppercase">30% off</span>
+		</div>
+		<rock-band-button-cta>
+			<button
+				class="btn btn-sm p-0 px-1 btn-danger"
+				aria-label="delete product from cart"
+				title="delete product from cart"
+			>
+				Remove
+			</button>
+		</rock-band-button-cta>
+	</div>
+</div>

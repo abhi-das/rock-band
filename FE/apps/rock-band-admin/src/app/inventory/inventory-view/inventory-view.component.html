@@ -1,0 +1,23 @@
+<div class="p-3 mb-4">
+	<div class="text-end">
+		<rock-band-button-cta>
+			<a [routerLink]="['edit/new']" class="btn btn-info me-2" aria-label="Add new products" title="Add new products">
+				<i class="bi bi-plus-lg me-1"></i>
+				<span class="mb-0 fs-7">Add New</span>
+			</a>
+		</rock-band-button-cta>
+	</div>
+</div>
+
+<ng-container *ngIf="productItm$ | async">
+	<rock-band-products-table
+		[tblData]="productItm$ | async"
+		(editRowHandler)="editProductHandler($event)"
+		(deleteRowHandler)="deleteProductHandler($event)"
+	>
+	</rock-band-products-table>
+</ng-container>
+
+<ng-container *ngIf="isProductLoading">
+	<rock-band-content-loader></rock-band-content-loader>
+</ng-container>

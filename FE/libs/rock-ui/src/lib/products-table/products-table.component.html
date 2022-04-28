@@ -1,0 +1,47 @@
+<ng-container *ngIf="tblData">
+	<table class="table table-striped border">
+		<thead>
+			<!-- <ng-content select="[tblHeaderColumns]"></ng-content> -->
+			<tr>
+				<th scope="col" sortable="id">Id</th>
+				<th scope="col">Name</th>
+				<th scope="col" style="width: 12em">Description</th>
+				<th scope="col" style="width: 8em">Default Image</th>
+				<th scope="col">Images</th>
+				<th scope="col">Price</th>
+				<th scope="col">Discount</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<ng-container *ngIf="!tblData || tblData.length < 1">
+				<tr>
+					<td colspan="7" class="text-center">No Data to display.</td>
+				</tr>
+			</ng-container>
+			<ng-container *ngIf="tblData && tblData.length">
+				<tr *ngFor="let data of tblData">
+					<td>{{ data.product.id }}</td>
+					<td>{{ data.product.name }}</td>
+					<td>{{ data.product.description }}</td>
+					<td><img style="width: 8em" [src]="data.product.defaultImage" alt="" /></td>
+					<td>
+						<p *ngFor="let img of data.product.images">{{ img }}</p>
+					</td>
+					<td>{{ data.product.price }}</td>
+					<td>{{ data.product.discount }}</td>
+					<td>
+						<div>
+							<button class="btn btn-sm btn-outline-danger" (click)="deleteHandler(data.product)">
+								<i class="bi bi-trash"></i>
+							</button>
+							<button class="btn btn-sm btn-outline-info ms-3" (click)="editHandler(data.product)">
+								<i class="bi bi-pencil-square"></i>
+							</button>
+						</div>
+					</td>
+				</tr>
+			</ng-container>
+		</tbody>
+	</table>
+</ng-container>

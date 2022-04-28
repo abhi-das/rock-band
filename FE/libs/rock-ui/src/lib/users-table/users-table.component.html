@@ -1,0 +1,39 @@
+<table class="table table-striped border">
+	<thead>
+		<tr>
+			<th scope="col" sortable="id">Id</th>
+			<th scope="col">Name</th>
+			<th scope="col">Phone</th>
+			<th scope="col">Email</th>
+			<th scope="col">Role</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<ng-container *ngIf="!tData || tData.length < 1">
+			<tr>
+				<td colspan="6" class="text-center">No Data to display.</td>
+			</tr>
+		</ng-container>
+		<ng-container *ngIf="tData && tData.length">
+			<tr *ngFor="let data of tData">
+				<td>{{ data.user.id }}</td>
+				<td>{{ data.user.name.firstName }} {{ data.user.name.lastName }}</td>
+				<td>{{ data.user.phone }}</td>
+				<!-- <td class="w-25"><img class="w-25" [src]="data.user.avatar" alt=""></td> -->
+				<td>{{ data.user.email }}</td>
+				<td>{{ data.user.role }}</td>
+				<td>
+					<div>
+						<button class="btn btn-sm btn-outline-danger" (click)="deleteHandler(data.user)">
+							<i class="bi bi-trash"></i>
+						</button>
+						<button class="btn btn-sm btn-outline-info ms-3" (click)="editHandler(data.user)">
+							<i class="bi bi-pencil-square"></i>
+						</button>
+					</div>
+				</td>
+			</tr>
+		</ng-container>
+	</tbody>
+</table>

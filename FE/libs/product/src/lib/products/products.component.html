@@ -1,0 +1,18 @@
+<div class="row">
+	<!-- Unique Banner which will be shown product list and product info page -->
+	<rock-banner></rock-banner>
+</div>
+
+<ng-container *ngIf="productItm$ | async">
+	<div class="row">
+		<div class="w-50 pb-4">
+			<rock-search placeholderText="Product Search" (inputChange)="searchProductHandler($event)"></rock-search>
+		</div>
+	</div>
+	<rock-band-product-items [productItm]="productItm$ | async | productFilter: query"></rock-band-product-items>
+</ng-container>
+
+<ng-container *ngIf="isProductLoading">
+	<rock-band-content-loader></rock-band-content-loader>
+</ng-container>
+<!-- <router-outlet></router-outlet> -->

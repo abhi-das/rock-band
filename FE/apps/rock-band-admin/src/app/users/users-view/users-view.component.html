@@ -1,0 +1,11 @@
+<ng-container *ngIf="usersItm$ | async">
+	<rock-band-users-table
+		[tData]="usersItm$ | async"
+		(editRowHandler)="editUserHandler($event)"
+		(deleteRowHandler)="deleteUserHandler($event)"
+	></rock-band-users-table>
+</ng-container>
+
+<ng-container *ngIf="isUsersLoading">
+	<rock-band-content-loader></rock-band-content-loader>
+</ng-container>

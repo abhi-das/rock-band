@@ -1,0 +1,25 @@
+<div class="container-content">
+	<div class="col-md-6 m-auto bg-back rounded-3 p-4">
+		<form class="p-4" [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+			<h4 class="mb-4 mt-4"><b>Login</b></h4>
+			<div class="d-flex mt-4 mb-4 align-items-center">
+				<label for="user" class="me-3 fw-bold">User ID</label>
+				<input type="text" class="form-control w-75" placeholder="User Id" formControlName="userId" />
+				<div class="text-danger mt-2" *ngIf="errorRes">
+					{{ errorRes }}
+				</div>
+			</div>
+
+			<span class="d-block text-center fs-7"
+				>By continuing, I agree to the <b class="text-danger">Terms of Use</b> &
+				<b class="text-danger">Privacy Policy</b></span
+			>
+
+			<button type="submit" class="form-button btn btn-warning btn-sm">Sign In</button>
+		</form>
+		<ng-container *ngIf="isAuthLoading">
+			<rock-band-content-loader></rock-band-content-loader>
+		</ng-container>
+	</div>
+</div>
+<router-outlet></router-outlet>

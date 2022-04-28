@@ -1,0 +1,9 @@
+<ng-container *ngIf="productItm">
+	<div class="row">
+		<ng-container *ngFor="let itm of productItm">
+			<div class="col-md-4 pic-holder">
+				<rock-band-product-item [productItem]="itm"></rock-band-product-item>
+			</div>
+		</ng-container>
+	</div>
+</ng-container>

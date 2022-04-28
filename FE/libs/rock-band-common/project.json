@@ -1,0 +1,23 @@
+{
+	"projectType": "library",
+	"root": "libs/rock-band-common",
+	"sourceRoot": "libs/rock-band-common/src",
+	"prefix": "rock-band",
+	"targets": {
+		"test": {
+			"executor": "@nrwl/jest:jest",
+			"outputs": ["coverage/libs/rock-band-common"],
+			"options": {
+				"jestConfig": "libs/rock-band-common/jest.config.js",
+				"passWithNoTests": true
+			}
+		},
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"options": {
+				"lintFilePatterns": ["libs/rock-band-common/src/**/*.ts", "libs/rock-band-common/src/**/*.html"]
+			}
+		}
+	},
+	"tags": []
+}

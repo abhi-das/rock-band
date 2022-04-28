@@ -1,0 +1,41 @@
+<!-- <rock-band-gift-wrap></rock-band-gift-wrap> -->
+
+<h2 class="mt-4 mb-4 p-2 fs-5">Shopping Cart</h2>
+
+<div class="row">
+	<ng-container *ngIf="cartItm$ | async">
+		<div class="col-md-7">
+			<rock-band-cart-items [cartItms]="cartItm$ | async"></rock-band-cart-items>
+			<ng-container *ngIf="isCartLoading">
+				<rock-band-content-loader></rock-band-content-loader>
+			</ng-container>
+		</div>
+	</ng-container>
+	<div class="col-md-5">
+		<h6 class="text-uppercase mb-3">Price Details <span class="text-capitalize">(2 Items)</span></h6>
+
+		<div class="row">
+			<div class="col-sm-9">
+				<p class="mb-1">Total <span class="text-uppercase">mrp</span></p>
+				<p class="mb-1">Discount on <span class="text-uppercase">mrp</span></p>
+				<p class="mb-1 text-capitalize">coupon discount</p>
+				<p class="text-capitalize">convenience fee <span class="text-danger fw-bold">know more</span></p>
+			</div>
+			<div class="col-sm-3 text-end">
+				<p class="mb-1">₹9,998</p>
+				<p class="text-success mb-1">-₹3,250</p>
+				<p class="mb-1 text-danger text-capitalize">apply coupon</p>
+				<p class="">
+					<span class="text-decoration-line-through">₹99</span>
+					<span class="text-uppercase text-success ms-1">free</span>
+				</p>
+			</div>
+			<hr />
+			<div class="d-flex justify-content-between">
+				<p class="text-capitalize fw-bold">total amount</p>
+				<p class="text-success fw-bold">₹5,998</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <router-outlet></router-outlet> -->

@@ -1,0 +1,15 @@
+{
+	"version": 2,
+	"projects": {
+		"app-ng-store": "libs/app-ng-store",
+		"auth": "libs/auth",
+		"cart": "libs/cart",
+		"product": "libs/product",
+		"rock-band": "apps/rock-band",
+		"rock-band-admin": "apps/rock-band-admin",
+		"rock-band-admin-e2e": "apps/rock-band-admin-e2e",
+		"rock-band-common": "libs/rock-band-common",
+		"rock-band-e2e": "apps/rock-band-e2e",
+		"rock-ui": "libs/rock-ui"
+	}
+}
