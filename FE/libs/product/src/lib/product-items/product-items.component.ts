@@ -7,6 +7,4 @@ import { productModel } from '@rock-band-ng-store';
 })
 export class ProductItemsComponent {
 	@Input() productItm: Array<productModel.ProductEntry> | undefined | null;
-
-	constructor() {}
 }

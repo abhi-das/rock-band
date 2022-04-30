@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { appStore, CartActions, ProductActions, productModel } from '@rock-band-ng-store';
+import { appStore, ProductActions, productModel } from '@rock-band-ng-store';
 import { Product } from 'libs/app-ng-store/src/lib/store/models/product.model';
 
 @Component({

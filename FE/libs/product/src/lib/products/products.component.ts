@@ -1,14 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { appStore, productModel, ProductActions, productSelector } from '@rock-band-ng-store';
-import { Observable, Subject, tap } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Component({
 	selector: 'rock-band-products',
 	templateUrl: './products.component.html',
 })
 export class ProductsComponent implements OnInit, OnDestroy {
-	isProductLoading = true;
 	productItm$?: Observable<productModel.ProductEntry[]>;
 	query?: string;
 
@@ -18,14 +17,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
 	ngOnInit(): void {
 		this._store.dispatch(ProductActions.loadProducts());
-
-		this.productItm$ = this._store.select(productSelector.productSelectAll).pipe(
-			tap((res) => {
-				if (res.length) {
-					this.isProductLoading = false;
-				}
-			})
-		);
+		this.productItm$ = this._store.select(productSelector.productSelectAll);
 	}
 
 	searchProductHandler(event: any) {

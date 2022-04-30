@@ -2,14 +2,13 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { appStore, authModel, UserActions, usersModel, usersSelector } from '@rock-band-ng-store';
-import { Observable, Subject, tap } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Component({
 	selector: 'rock-band-users-view',
 	templateUrl: './users-view.component.html',
 })
 export class UsersViewComponent implements OnInit, OnDestroy {
-	isUsersLoading = true;
 	usersItm$?: Observable<usersModel.UsersEntry[]>;
 	private readonly destroy$ = new Subject();
 
@@ -21,13 +20,7 @@ export class UsersViewComponent implements OnInit, OnDestroy {
 
 	ngOnInit(): void {
 		this._store.dispatch(UserActions.loadUsers());
-		this.usersItm$ = this._store.select(usersSelector.usersSelectAll).pipe(
-			tap((res) => {
-				if (res.length) {
-					this.isUsersLoading = false;
-				}
-			})
-		);
+		this.usersItm$ = this._store.select(usersSelector.usersSelectAll);
 	}
 
 	editUserHandler(user: authModel.User): void {

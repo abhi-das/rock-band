@@ -6,9 +6,11 @@
 	<ng-container *ngIf="cartItm$ | async">
 		<div class="col-md-7">
 			<rock-band-cart-items [cartItms]="cartItm$ | async"></rock-band-cart-items>
-			<ng-container *ngIf="isCartLoading">
-				<rock-band-content-loader></rock-band-content-loader>
-			</ng-container>
+		</div>
+	</ng-container>
+	<ng-container *ngIf="!(cartItm$ | async)?.length">
+		<div class="col-md-7">
+			<rock-band-content-loader></rock-band-content-loader>
 		</div>
 	</ng-container>
 	<div class="col-md-5">

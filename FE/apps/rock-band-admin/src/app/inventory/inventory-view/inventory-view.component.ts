@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { appStore, ProductActions, productModel, productSelector } from '@rock-band-ng-store';
-import { Observable, Subject, tap } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Component({
 	selector: 'rock-band-inventory-view',
@@ -10,7 +10,6 @@ import { Observable, Subject, tap } from 'rxjs';
 	styles: [],
 })
 export class InventoryViewComponent implements OnInit, OnDestroy {
-	isProductLoading = true;
 	productItm$?: Observable<productModel.ProductEntry[]>;
 	private readonly destroy$ = new Subject();
 
@@ -22,13 +21,7 @@ export class InventoryViewComponent implements OnInit, OnDestroy {
 
 	ngOnInit(): void {
 		this._store.dispatch(ProductActions.loadProducts());
-		this.productItm$ = this._store.select(productSelector.productSelectAll).pipe(
-			tap((res) => {
-				if (res.length) {
-					this.isProductLoading = false;
-				}
-			})
-		);
+		this.productItm$ = this._store.select(productSelector.productSelectAll);
 	}
 
 	editProductHandler(prd: productModel.Product): void {

@@ -1,18 +1,17 @@
 <ng-container *ngIf="cartItms">
-<!-- <p>{{cartItms.length}}</p> -->
-	<ng-container *ngFor="let cItm of cartItms  | slice: pageSize | slice: 0:itemsPerPage">
+	<!-- <ng-container *ngFor="let cItm of cartItms | slice: pageSize | slice: 0:itemsPerPage"> -->
+	<ng-container *ngFor="let cItm of cartItms">
 		<ng-container *ngFor="let prds of cItm.products">
 			<rock-cart-item [label]="prds.name" [quantity]="prds.quantity" [price]="prds.price"></rock-cart-item>
 		</ng-container>
 	</ng-container>
-	<ngb-pagination 
-		[collectionSize]="cartItms.length" 
-		[(page)]="page" 
-		[pageSize]="itemsPerPage" 
-		[rotate]="true" 
+	<!-- <ngb-pagination
+		[collectionSize]="cartItms.length"
+		[(page)]="page"
+		[pageSize]="itemsPerPage"
+		[rotate]="true"
 		[ellipses]="false"
 		[boundaryLinks]="true"
 		(pageChange)="onPageChange(page)"
-		></ngb-pagination>
-		
+	></ngb-pagination> -->
 </ng-container>

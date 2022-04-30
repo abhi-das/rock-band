@@ -4,8 +4,4 @@ import { Component, OnInit } from '@angular/core';
 	selector: 'rock-band-content-loader',
 	templateUrl: './content-loader.component.html',
 })
-export class ContentLoaderComponent implements OnInit {
-	constructor() {}
-
-	ngOnInit(): void {}
-}
+export class ContentLoaderComponent {}

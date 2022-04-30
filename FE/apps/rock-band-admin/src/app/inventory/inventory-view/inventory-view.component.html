@@ -18,6 +18,6 @@
 	</rock-band-products-table>
 </ng-container>
 
-<ng-container *ngIf="isProductLoading">
+<ng-container *ngIf="!(productItm$ | async)?.length">
 	<rock-band-content-loader></rock-band-content-loader>
 </ng-container>

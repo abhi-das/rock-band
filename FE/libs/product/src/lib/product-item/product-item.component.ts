@@ -12,16 +12,11 @@ export class ProductItemComponent implements OnInit {
 	updatedProd!: productModel.ProductEntry;
 	qNum: number = 0;
 
-	constructor(
-		private readonly _store: Store<appStore.AppState>,
-		private readonly _notification: NotificationAlertService
-	) {}
+	constructor(private readonly _store: Store<appStore.AppState>) {}
 
 	ngOnInit(): void {
 		if (this.productItem) {
-			this._store
-				.select(cartSelectors.cartProductQuantitySelector(this.productItem?.product.id || 0))
-				.subscribe((q) => console.log(q));
+			this._store.select(cartSelectors.cartProductQuantitySelector(this.productItem?.product.id || 0));
 		}
 	}
 
@@ -38,11 +33,6 @@ export class ProductItemComponent implements OnInit {
 		this._store.dispatch(
 			CartActions.addProductToCartSuccessFul({ productItem: CartActions.createNewCartItem(prdItem) })
 		);
-		this._notification.showNotificationAlert(addToCartTemplateRef, {
-			classname: 'bg-light',
-			delay: 2000,
-			autohide: true,
-		});
 	}
 
 	changeQuantityInCart(q: string, prdItem: productModel.ProductEntry): void {

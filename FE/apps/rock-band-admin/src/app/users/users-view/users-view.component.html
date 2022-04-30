@@ -6,6 +6,6 @@
 	></rock-band-users-table>
 </ng-container>
 
-<ng-container *ngIf="isUsersLoading">
+<ng-container *ngIf="!(usersItm$ | async)?.length">
 	<rock-band-content-loader></rock-band-content-loader>
 </ng-container>
