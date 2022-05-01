@@ -11,6 +11,7 @@ export class ProductsTableComponent implements OnInit {
 	@Output() tblSort: EventEmitter<SortEvent> = new EventEmitter<SortEvent>();
 	@Output() editRowHandler: EventEmitter<any> = new EventEmitter<any>();
 	@Output() deleteRowHandler: EventEmitter<any> = new EventEmitter<any>();
+
 	constructor() {}
 
 	ngOnInit(): void {}

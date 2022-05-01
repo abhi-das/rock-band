@@ -4,8 +4,7 @@ import { SortEvent } from '../directives/sortable.directive';
 
 @Component({
 	selector: 'rock-band-users-table',
-	templateUrl: './users-table.component.html',
-	styles: [],
+	templateUrl: './users-table.component.html'
 })
 export class UsersTableComponent implements OnInit {
 	@Input() tData: Array<usersModel.UsersEntry> | undefined | null;
